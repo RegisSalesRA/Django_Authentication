@@ -10,5 +10,5 @@ class RegisterView(generics.ListCreateAPIView):
         serializers = Userserializer(data=request.data)
         if serializers.is_valid():
             serializers.save()
-            return Response({'error':False})
-        return Response({'error':True})    
+            return Response({'Adicionado com sucesso'})
+        return Response({'Erro ao adicionar usuario'})

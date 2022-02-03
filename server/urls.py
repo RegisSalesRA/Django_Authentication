@@ -8,9 +8,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('logins/', obtain_auth_token),
+    path('login/', obtain_auth_token),
     path('register/', views.RegisterView.as_view()),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
 if settings.DEBUG:
