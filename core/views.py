@@ -5,6 +5,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from core.serializers import *
+from rest_framework.permissions import IsAuthenticated, AllowAny
+
+class FuncionarioView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Funcionario.objects.all()
+    serializer_class = FuncionarioSerializer
 
 class RegisterView(generics.ListCreateAPIView):
     queryset = User.objects.all()
@@ -20,4 +26,4 @@ class RegisterView(generics.ListCreateAPIView):
 class LogoutView(APIView):
     def get(self,request,format=None):
         request.user.auth_token.delete()
-        return Response(status = status.HTTP_101_SWITCHING_PROTOCOLS)
+        return Response(status = status.HTTP_200_OK)

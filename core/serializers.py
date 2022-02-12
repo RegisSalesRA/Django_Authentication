@@ -3,6 +3,8 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
 
+from core.models import Funcionario
+
 User = get_user_model()
 
 class Userserializer(serializers.ModelSerializer):
@@ -15,3 +17,8 @@ class Userserializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         Token.objects.create(user=user)
         return user
+
+class FuncionarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Funcionario
+        fields = ('id','nome','sobrenome')

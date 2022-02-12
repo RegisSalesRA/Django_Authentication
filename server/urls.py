@@ -27,6 +27,8 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
+    #Funcionarios
+    path('funcionario/', views.FuncionarioView.as_view()),
     #Token
     path('admin/', admin.site.urls),
     path('login/', obtain_auth_token),
