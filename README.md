@@ -34,14 +34,8 @@ If do you have docker-compose you could you command:
 #  Django_Authentication
 
 
-# Login
-<img src="/assets/Login.png" >
+# Swagger
+<img src="/assets/swagger.png" >
 
-# Home
-<img src="/assets/Home.png" >
-
-# Layout drawer
-<img src="assets/Index.png" >
-
-# Favorite
-<img src="/assets/Favorites.png" >
+# Insomnia
+<img src="/assets/insomnia.png" >
